@@ -1,0 +1,26 @@
+{ "name": "webinos-api-deviceDiscovery"
+, "publishConfig": { "tag": "alpha" }
+, "description": "Discovery API"
+, "keywords": [ "webinos", "discovery", "API"]
+, "version": "0.0.1"
+, "homepage": "http://webinos.org/"
+, "author": "Ziran Sun <ziran.sun@samsung.com>"
+, "repository":
+  { "type": "git"
+  , "url": "https://github.com/webinos/webinos-api-deviceDiscovery.git"
+  }
+, "bugs":
+  { "email": "webinos-wp4-ml@fokus.fraunhofer.de"
+  , "url": ""
+  }
+, "directories": { "lib": "./lib"
+                 }
+, "main": "./lib/webinos.discovery.rpc.js"
+, "dependencies":
+  {
+    "webinos-jsonrpc2" : "*"
+  }
+, "bundleDependencies":
+  [
+  ]
+}
