@@ -19,11 +19,7 @@
 <html dir="ltr" lang="en-US">
 <head>
 <title>Webinos HRM demo</title>
-<!---<link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC' rel='stylesheet' type='text/css'>-->
-<!-- link rel="stylesheet" href="/client/discovery/Android/hrm.css"-->
-<link rel="stylesheet" href="../../css/index.css" type="text/css" media="screen"/>
 <link href='http://fonts.googleapis.com/css?family=Ovo' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="../../css/jquery.mobile-1.3.0.min.css" />
 <script src="../../js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="../../webinos.js"></script>
 </head>
@@ -31,10 +27,6 @@
 <body>
 		<div id="numbers">
 			<div id="nmbrmain"><span id="nmbrmainspan">123</span><p>BPM</p></div>
-		</div>
-		<div id="timer">
-			<a href="#" id="timerstart">Start/Pause Clock</a>
-			<div><span id="h">00</span>:<span id="m">00</span>:<span id="s">00</span>.<span id="ms">0</span></div>
 		</div>
 		
 		<div id="loader"></div>
@@ -46,13 +38,11 @@
 				&lt;canvas&gt; FEATURE.
 				</p>
 			</canvas>
-		</div>
+		</div> 
 		
-		<div class="connectbuttons"><a href="javascript:connectWebinos()">Connect to PZP</a><a href="javascript:startHRM()"  id="HRM">StartHRM</a></div>
+		<div class="connectbuttons"><a href="javascript:connectWebinos()">Connect to PZP</a>
+		<div class="startHRMbutton"><a href="javascript:startHRM()"  id="HRM">StartHRM</a></div>
 
-
-		<img id="imgbckgr" src="discovery/Android/img/darkoverlay.png">
-		
 		
 <script type="text/javascript">
 	
@@ -127,6 +117,8 @@
 			console.log("onFound callback: found service."); 
 			
 			nmbrmainspan = document.getElementById('nmbrmainspan');
+ 			if(service.values[0] === 1000)
+				alert("You are not connected to HRM");
 			nmbrmainspan.innerHTML = service.values[0];
 		}	
 		
@@ -141,7 +133,7 @@
 			{
 				$('#HRM').text('StopHRM');
 				try {
-					//$('#loader').html("<img src='discovery/Android/img/ajaxloader.gif'>");
+					$('#loader').html("<img src='./img/ajaxloader.gif'>");
 				}
 				catch(e) {
 				console.log("startHRM - loader: "+e.message);
