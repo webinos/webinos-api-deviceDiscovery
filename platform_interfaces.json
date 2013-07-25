@@ -1,0 +1,7 @@
+{
+  "android": {
+    "DiscoveryImpl": "org.webinos.android.impl.discovery.DiscoveryImpl",
+    "DiscoveryMdnsImpl": "org.webinos.android.impl.discovery.DiscoveryMdnsImpl",
+    "DiscoveryHRMImpl": "org.webinos.android.impl.discovery.DiscoveryHRMImpl"
+  }
+}
