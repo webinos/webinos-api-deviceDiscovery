@@ -51,7 +51,7 @@ Alternatively you can use the webinos dashboard to allow the user choose the dev
          }
      }).onAction(function successFn(data){
 		  if (data.result.length > 0){
-			// User selected some contact APIs
+			// User selected some services
 		  }
 	 });
 
