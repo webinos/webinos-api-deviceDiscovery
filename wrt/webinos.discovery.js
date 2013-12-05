@@ -24,11 +24,15 @@
 	 * @param obj Object containing displayName, api, etc.
 	 */
 	DiscoveryModule = function (obj) {
-		this.base = WebinosService;
-		this.base(obj);
+		WebinosService.call(this, obj);
 	};
 	
-	DiscoveryModule.prototype = new WebinosService();
+    // Inherit all functions from WebinosService
+	DiscoveryModule.prototype = Object.create(WebinosService.prototype);
+    // The following allows the 'instanceof' to work properly
+	DiscoveryModule.prototype.constructor = DiscoveryModule;
+    // Register to the service discovery
+	_webinos.registerServiceConstructor("http://webinos.org/api/discovery", DiscoveryModule);
 	
 	/**
 	 * To find devices that support the specific service. This applies to both Android and Linux
